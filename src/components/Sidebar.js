@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function Sidebar({ data, handleActivePokemon, }) {
+function Sidebar({ data, handleActivePokemon, handleUrl }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredData, setFilteredData] = useState(data.results);
 
@@ -30,7 +30,10 @@ function Sidebar({ data, handleActivePokemon, }) {
           </li>
         ))}
       </ul>
-      
+      <div className="pagination">
+        <button onClick={() => handleUrl(data.previous)}>Previous</button>
+        <button onClick={() => handleUrl(data.next)}>Next</button>
+      </div>
     </>
   );
 }
