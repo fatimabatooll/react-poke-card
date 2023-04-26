@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Sidebar.css'
 
 function Sidebar({ data, handleActivePokemon, handleUrl }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -26,13 +27,13 @@ function Sidebar({ data, handleActivePokemon, handleUrl }) {
       <ul>
         {filteredData.map((pokemon) => (
           <li key={pokemon.name}>
-            <button onClick={handleActivePokemon}>{pokemon.name}</button>
+            <button className ='btn' onClick={handleActivePokemon}>{pokemon.name}</button>
           </li>
         ))}
       </ul>
       <div className="pagination">
-        <button onClick={() => handleUrl(data.previous)}>Previous</button>
-        <button onClick={() => handleUrl(data.next)}>Next</button>
+        <button className='btn' onClick={() => handleUrl(data.previous)}>Previous</button>
+        <button  className ='btn'onClick={() => handleUrl(data.next)}>Next</button>
       </div>
     </>
   );

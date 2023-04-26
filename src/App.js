@@ -1,10 +1,12 @@
 import React from 'react'
 import PokemonCard from './components/PokemonCard'
 import Main from './components/Main'
+import logo from './poke.png'
 
 const App = () => {
   return (
-    <div>
+    <div className=''>
+    <img src={logo} height='80' alt="logo" className="logo"/>
         <Main/>
     </div>
   )

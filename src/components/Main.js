@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import PokemonCard from './PokemonCard';
 import UseFetch from '../Hook/UseFetch';
+import './Main.css'
+
+
 
 function Main() {
   const [url, setUrl] = useState('https://pokeapi.co/api/v2/pokemon');
@@ -18,6 +21,7 @@ function Main() {
 
   return (
     <div className="container">
+    
       <div className="sidebar">
         {!isLoading && pokemonList ? (
           <Sidebar
