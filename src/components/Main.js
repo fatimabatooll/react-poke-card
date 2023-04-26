@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Sidebar from './Sidebar';
 import PokemonCard from './PokemonCard';
 import UseFetch from '../Hook/UseFetch';
 
@@ -17,7 +18,17 @@ function Main() {
 
   return (
     <div className="container">
-      
+      <div className="sidebar">
+        {!isLoading && pokemonList ? (
+          <Sidebar
+            data={pokemonList}
+            handleActivePokemon={handleActivePokemon}
+            handleUrl={handleUrl}
+          />
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
       <PokemonCard name={activePokemon} />
     </div>
   );
